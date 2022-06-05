@@ -1,3 +1,7 @@
+local modpath = minetest.get_modpath("bt_lead")
+
+dofile(modpath.."/tools.lua")
+
 minetest.register_node('bt_lead:lump', {
     description = 'Lead Lump\nShiny!',
     paramtype = "light",

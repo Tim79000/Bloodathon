@@ -18,7 +18,7 @@ minetest.register_node("bt_player:hand", {
 			choppy = {times={[1]=3,[2]=4,[3]=5,[4]=6,[5]=7,[6]=8},  uses=0, maxlevel=1},
 			instant = {times={[1]=0},  uses=0, maxlevel=1},
 		},
-		damage_groups = {damage=1},
+		damage_groups = {fleshy=1},
 	},
 	paramtype = "light",
 	drawtype = "mesh",
@@ -42,9 +42,11 @@ minetest.register_on_joinplayer(function(player)
 	player:hud_set_hotbar_itemcount(3)
 	player:set_properties({
 		visual = "mesh",
-		visual_size = { x = 1, y = 1 },
+		visual_size = { x = 3, y = 3 },
                                     mesh = 'bt_player.obj',
-		eye_height = "1.45",
+		eye_height = "3.5",
+	                  stepheight = 1.25,
+                                    collisionbox = { -1, -0.5, -1, 1, 4, 1 },
 		textures = { "bt_player_human.png" },
 	})
 end)
